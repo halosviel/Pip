@@ -1,4 +1,4 @@
---[=[a
+--[=[
 	[INFO]
 	author: @halosviel
 	created: 2026 May 12
@@ -17,7 +17,7 @@
 	console.log("hello world")
 ]=]
 
---# Configs
+-- [CONFIGS]
 local INFO_LEVEL = 2
 local NIL_STR = "??"
 
@@ -38,7 +38,7 @@ return {
 		warn(`WARNING :: [{name}:{line}] {message}`)
 	end,
 	error = _error,
-	
+
 	--# aliases
 	log = print,
 	except = _error
