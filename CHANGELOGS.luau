@@ -5,6 +5,8 @@
 --# 2026
 >>
 
+MAY 24: Updated serviceTemplate, interfaceService, and added a comment in boot.
+
 MAY 23: Revamp.
 MAY 23: Enabled cript Sync to VSC + All libs.
 

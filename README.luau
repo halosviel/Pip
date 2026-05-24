@@ -9,7 +9,7 @@ that appear must be dealt with on a case-by case basis.
 [DETAILS]
 - Variable types are not explicitly defined unless necessary or unless the variable and its value are ambiguous.
 
-- Defaults and fallbacks for variable output will usually be "??" or "Unknown"
+- Defaults and fallbacks for variable output will usually be "??" or "Unknown".
 
 - Configs of non-service scripts should be done at the top of the script, otherwise inside of the service's
   constructor function.
