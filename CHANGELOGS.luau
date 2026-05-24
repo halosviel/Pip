@@ -5,6 +5,7 @@
 --# 2026
 >>
 
+MAY 24: Added function "deverr" to console.
 MAY 24: Updated serviceTemplate, interfaceService, and added a comment in boot.
 
 MAY 23: Revamp.

@@ -70,12 +70,20 @@ local function _error(message: string, ...: any)
 	error(`{scriptName} :: {message} - on line {line}`..formatTuple(...))
 end
 
+--# just appends "[DEVERR]" to the message
+local function devError(message: string, ...: any)
+	local scriptName: string, line: string  = getSource()
+	error(`[DEVERR] {scriptName} :: {message} - on line {line}`..formatTuple(...))
+end
+
 return {
 	print = _print,
 	warn = _warn,
 	error = _error,
+	deverror = devError,
 	
 	--# aliases
 	log = _print,
-	except = _error
+	except = _error,
+	deverr = devError
 }

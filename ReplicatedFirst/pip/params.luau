@@ -30,7 +30,7 @@ local console = require("@game/ReplicatedFirst/pip/console")
 -->
 
 local throwErr = function(match: string, param: string)
-	console.error(`Param type mismatch ({match} expected, got {typeof(param) == "Instance" and param.ClassName or typeof(param)})`)
+	console.deverr(`Param type mismatch ({match} expected, got {typeof(param) == "Instance" and param.ClassName or typeof(param)})`)
 end
 
 --[[
