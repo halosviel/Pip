@@ -7,6 +7,11 @@ local console = require("@game/ReplicatedFirst/pip/console")
 
 -- [TYPES]
 type self = {
+	-- [CONFIG]
+
+	-- [ENTRIES]
+
+	-- [FUNCTIONS]
 	constructor: ( self: self ) -> nil,
 	ready: ( self: self ) -> nil
 }
@@ -16,6 +21,7 @@ export type InterfaceService = self
 
 return {
 	constructor = function(self: self)
+		
 	end,
 	
 	ready = function(self: self)

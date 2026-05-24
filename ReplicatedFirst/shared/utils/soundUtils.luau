@@ -64,7 +64,9 @@ export type Sound = self
 
 --# Cache & preload
 
-game.Loaded:Wait()
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
 
 local cacheStartTimestamp = os.clock()
 

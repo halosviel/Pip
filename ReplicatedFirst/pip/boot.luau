@@ -11,6 +11,7 @@
 	
 	[NOTES]
 	- There is no guard for same-name modules - will warn instead.
+	- The entire process runs in the same thread.
 	- Shallow search is used for the services folder.
 ]=]
 
