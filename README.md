@@ -4,7 +4,7 @@ Pip is an open-sourced framework inspired by Linux and JavaScript.
 It is built for personal use, but open to anyone who finds it :)
 
 <p align="center">
-	<img width="1500" height="700" alt="A project using Pip" src="https://github.com/user-attachments/assets/37ea592f-bc28-4d1f-92a5-bccbf024784f" />
+	<img width="1450" height="600" alt="A project using Pip" src="https://github.com/user-attachments/assets/dc564f86-17e9-4cf7-a3c8-082745a2d440" />
     <small>A project using Pip</small>
 </p>
 
@@ -21,10 +21,10 @@ bobbing and day cycles.
 Pip is meant to be build on top of - Each game the framework is used on is meant to be different in its own way,
 but still retain the core structure and principles of the framework.
 
-## Sample service
-Also located in the `server/services`.
+## Service Template
+Also located in `server/services`.
 <details>
-<summary>Example</summary>
+<summary>sampleService</summary>
 
 ```lua
 --[=[
@@ -72,8 +72,6 @@ return {
 
 ## Installation
 #### Model
-```
 https://create.roblox.com/store/asset/113097113661715
-```
 
 <img width="250" height="350" alt="2026-05-24-184658_hyprshot" src="https://github.com/user-attachments/assets/5c199d4e-20ae-473d-8e44-a486c917b80b" />
