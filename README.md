@@ -21,8 +21,50 @@ bobbing and day cycles.
 Pip is meant to be build on top of - Each game the framework is used on is meant to be different in its own way,
 but still retain the core structure and principles of the framework.
 
+## Sample service
+Also located in the `server/services`.
+```lua
+--[=[
+	[INFO]
+	author: @halosviel
+	created: 2026 May 22
+	
+	[DESCRIPTION]
+	
+	[NOTES]
+	- 
+]=]
+
+-- [REQUIRES]
+
+-- [TYPES]
+type self = {
+	-- [CONFIG]
+	
+	-- [ENTRIES]
+	
+	-- [FUNCTIONS]
+	constructor: ( self: self ) -> nil,
+	ready: ( self: self ) -> nil
+}
+export type MyService = self
+
+-->
+
+return {
+	constructor = function(self: self)
+		-- CONFIG]
+        
+        -->
+        
+	end,
+	
+	ready = function(self: self)
+		
+	end,
+} :: self
+```
+
 ## Installation
-
 Model: https://create.roblox.com/store/asset/113097113661715
-
 <img width="277" height="418" alt="2026-05-24-184658_hyprshot" src="https://github.com/user-attachments/assets/5c199d4e-20ae-473d-8e44-a486c917b80b" />
