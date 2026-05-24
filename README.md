@@ -4,7 +4,7 @@ Pip is an open-sourced framework inspired by Linux and JavaScript.
 It is built for personal use, but open to anyone who finds it :)
 
 <p align="center">
-    <img width="1280" height="720" alt="A screenshot showing what code using Pip would look like in a real project" src="https://github.com/user-attachments/assets/6626b1d0-56c7-41e3-a145-d1a3b996a67f" />
+	<img width="1920" height="950" alt="New Project" src="https://github.com/user-attachments/assets/37ea592f-bc28-4d1f-92a5-bccbf024784f" />
     <small>A project using Pip</small>
 </p>
 
