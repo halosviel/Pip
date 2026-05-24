@@ -4,7 +4,7 @@ Pip is an open-sourced framework inspired by Linux and JavaScript.
 It is built for personal use, but open to anyone who finds it :)
 
 <p align="center">
-	<img width="1920" height="950" alt="New Project" src="https://github.com/user-attachments/assets/37ea592f-bc28-4d1f-92a5-bccbf024784f" />
+	<img width="1500" height="700" alt="A project using Pip" src="https://github.com/user-attachments/assets/37ea592f-bc28-4d1f-92a5-bccbf024784f" />
     <small>A project using Pip</small>
 </p>
 
@@ -23,6 +23,9 @@ but still retain the core structure and principles of the framework.
 
 ## Sample service
 Also located in the `server/services`.
+<details>
+<summary>Example</summary>
+
 ```lua
 --[=[
 	[INFO]
@@ -65,6 +68,12 @@ return {
 } :: self
 ```
 
+</details>
+
 ## Installation
-Model: https://create.roblox.com/store/asset/113097113661715
-<img width="277" height="418" alt="2026-05-24-184658_hyprshot" src="https://github.com/user-attachments/assets/5c199d4e-20ae-473d-8e44-a486c917b80b" />
+#### Model
+```
+https://create.roblox.com/store/asset/113097113661715
+```
+
+<img width="250" height="350" alt="2026-05-24-184658_hyprshot" src="https://github.com/user-attachments/assets/5c199d4e-20ae-473d-8e44-a486c917b80b" />
