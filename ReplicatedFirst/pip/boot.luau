@@ -11,7 +11,6 @@
 	
 	[NOTES]
 	- There is no guard for same-name modules - will warn instead.
-	- The entire process runs in the same thread.
 	- Shallow search is used for the services folder.
 ]=]
 
@@ -59,7 +58,7 @@ return function(services: Folder)
 				module = require(moduleScript)
 			end,
 			function(err: string)
-				console.warn(`Failed to require {moduleName}: {err}. Skipping...`)
+				console.warn(`Failed to require {moduleName}`, err, "Skipping...")
 			end,
 		}
 		if not moduleRequired then
@@ -72,7 +71,7 @@ return function(services: Folder)
 		
 		--# register
 		if modules[moduleName] ~= nil then
-			console.warn(`Duplicate of {moduleName} found. Skipping...`)
+			console.warn(`Duplicate of {moduleName} found`, "Skipping...")
 			continue
 		end
 		modules[moduleName] = module
@@ -83,7 +82,7 @@ return function(services: Folder)
 				module:constructor()
 			end,
 			function(err: string)
-				console.warn(`{moduleName} constructor() err: {err}. Skipping...`)
+				console.warn(`{moduleName} constructor callback failure`, err, "Skipping...")
 			end,
 		}
 		if not constructorCalled then
@@ -98,7 +97,7 @@ return function(services: Folder)
 				module:ready()
 			end,
 			function(err: string)
-				console.warn(`{moduleName} ready() err: {err}. Skipping...`)
+				console.warn(`{moduleName} ready callback failed`, err, "Skipping...")
 			end,
 		}
 		

@@ -5,6 +5,8 @@
 --# 2026
 >>
 
+MAY 24: Updated README file; Will add a custom one to GitHub instead of using it.
+MAY 24: Updated boot failure logs to be more legible + use new formatting.
 MAY 24: Added function "deverr" to console.
 MAY 24: Updated serviceTemplate, interfaceService, and added a comment in boot.
 

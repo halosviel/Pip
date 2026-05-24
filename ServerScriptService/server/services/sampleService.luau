@@ -11,8 +11,6 @@
 
 -- [REQUIRES]
 
--- [VARIABLES]
-
 -- [TYPES]
 type self = {
 	-- [CONFIG]
