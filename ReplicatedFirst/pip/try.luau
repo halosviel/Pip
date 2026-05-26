@@ -33,14 +33,15 @@ local params = require("./params")
 return function(callbacks: { () -> nil }) : ( boolean, any )
 	local mainCallback: () -> nil = callbacks[1]
 	params.expect("function", mainCallback)
+
+	local errorHandler: (() -> nil)? = callbacks[2]
+	if errorHandler then
+		params.expect("function", errorHandler)
+	end
 	
 	local done, value: any = pcall(mainCallback)
-	if done == false then
-		local errorHandler: (() -> nil)? = callbacks[2]
-		if errorHandler then
-			params.expect("function", errorHandler)
-			errorHandler(value or "??")
-		end
+	if done == false and errorHandler then
+		errorHandler(value or "??")
 	end
 	
 	return done, value

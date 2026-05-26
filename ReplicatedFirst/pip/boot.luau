@@ -77,7 +77,7 @@ return function(services: Folder)
 		modules[moduleName] = module
 		
 		--# call constructor
-		local constructorCalled = try {
+		try {
 			function()
 				module:constructor()
 			end,
@@ -85,14 +85,11 @@ return function(services: Folder)
 				console.warn(`{moduleName} constructor callback failure`, err, "Skipping...")
 			end,
 		}
-		if not constructorCalled then
-			continue
-		end
 	end
 	
 	--# call ready
 	for moduleName: string, module: Module in modules do
-		local readyCalled: boolean = try {
+		try {
 			function()
 				module:ready()
 			end,
@@ -100,10 +97,6 @@ return function(services: Folder)
 				console.warn(`{moduleName} ready callback failed`, err, "Skipping...")
 			end,
 		}
-		
-		if not readyCalled then
-			continue
-		end
 	end
 	
 	if bootTimer then
