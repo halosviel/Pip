@@ -10,7 +10,8 @@
 	local myColor = toRGB(Color3.fromRGB(255, 255, 255))
 	textLabel.Text = `<font color="{myColor}">Hello world!</font>`
 	
-	warning: clanker code
+	[NOTES]
+	- clanker code
 ]=]
 
 -- [REQUIRES]
