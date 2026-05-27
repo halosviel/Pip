@@ -33,7 +33,6 @@ return {
 	--# updated logic 2026 May 14
 	setResetEnabled = function(self: self, enabled: boolean)
 		params.expect("boolean", enabled)
-		
 		task.spawn(function()
 			repeat task.wait() until pcall(function()
 				game.StarterGui:SetCore("ResetButtonCallback", false)
