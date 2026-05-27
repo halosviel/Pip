@@ -5,6 +5,8 @@
 --# 2026
 >>
 
+MAY 27: Updated console deverr message.
+MAY 27: Updated StateMachine util.
 MAY 27: Updated the inputChangeLogger daemon.
 MAY 27: Removed getPreferredInputStyled module.
 MAY 27: Updated most utils.

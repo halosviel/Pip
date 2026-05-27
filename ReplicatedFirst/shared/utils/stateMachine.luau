@@ -34,6 +34,9 @@
 	sm:setState("intermission")
 	task.wait(1)
 	sm:setState("round")
+	
+	[NOTES]
+	- Can't use self keyword as self in setState and Destroy due to module structure -> used "stateMachine" instead
 ]=]
 
 -- [REQUIRES]
@@ -52,21 +55,23 @@ export type State = {
 	exit: (( self: State ) -> nil)?,
 }
 
-export type StateMachine = {
+type self = {
+	name: string,
 	state: string?,
 	states: { [string]: State },
 	queue: { QueuedState },
 	locked: boolean,
 	
-	setState: ( self: StateMachine, stateName: string ) -> nil,
-	Destroy: ( self: StateMachine ) -> nil,
+	setState: ( self: self, stateName: string ) -> nil,
+	Destroy: ( self: self ) -> nil,
 }
+export type StateMachine = self
 
 -->
 
 --# State machine runtime
 
-local stateMachines: { StateMachine } = {}
+local stateMachines: { self } = {}
 local con: RBXScriptConnection?
 
 --[[
@@ -90,7 +95,7 @@ local function start()
 			return
 		end
 		
-		for _, stateMachine: StateMachine in stateMachines do
+		for _, stateMachine: self in stateMachines do
 			
 			--# get next state
 			local queuedState: QueuedState = stateMachine.queue[1]
@@ -110,7 +115,7 @@ local function start()
 						currentState:exit()
 					end,
 					function(err: string)
-						console.warn(`"{currentStateName}" exit state failed: {err}`)
+						console.warn(`"{currentStateName}" exit state failed`, `Err: err`, `State machine: {stateMachine.name}`)
 					end,
 				}
 			end
@@ -131,7 +136,7 @@ local function start()
 					nextState:enter(table.unpack(queuedState.args))
 				end,
 				function(err: string)
-					console.warn(`"{nextStateName}" enter state failed: {err}`)
+					console.warn(`"{nextStateName}" enter state failed`, `Err: err`, `State machine: {stateMachine.name}`)
 				end,
 			}
 			
@@ -151,17 +156,21 @@ end
 
 local StateMachine = {}
 
-function StateMachine.new(name: string, states: { name: string, [string]: State? }) : StateMachine
+function StateMachine.new(name: string, states: { name: string, [string]: State? }) : self
 	params.expect("string", name)
 	params.expect("table", states)
 	
 	local stateNames: { string } = {}
+	local noStates = true --# flag to replace #states since its a dict
+	
 	for stateName: string?, state: State? in states do
 		params.expect("string", stateName) --# all keys should be a string (state name)
 		params.expect("table", state) --# all states should be a dictionary
 		
 		local enterCallback: ((...any) -> nil)? = state.enter
-		params.expect("function", enterCallback) --# enter should be a function
+		if not enterCallback then
+			console.deverr("Cannot have a state without an enter callback", `State machine: {name}`)
+		end
 		
 		local exitCallback: (() -> nil)? = state.exit
 		if exitCallback then
@@ -169,6 +178,11 @@ function StateMachine.new(name: string, states: { name: string, [string]: State?
 		end
 		
 		table.insert(stateNames, stateName)
+		noStates = false
+	end
+	
+	if noStates then
+		console.deverr("Cannot have a state machine with no states", `State machine: {name}`)
 	end
 	
 	local self = setmetatable({
@@ -180,12 +194,13 @@ function StateMachine.new(name: string, states: { name: string, [string]: State?
 	}, StateMachine :: StateMachine)
 	
 	table.insert(stateMachines, self)
-	--console.log(`Created stateMachine (states: {table.concat(stateNames, ", ")})`)
+	--console.log(`Created stateMachine {name}`, States: {table.concat(stateNames, ", ")})
 	
 	return self
 end
 
 function StateMachine:setState(stateName: string, ...: any)
+	print(stateName, ...)
 	params.expect("string", stateName)
 	
 	local isValidState: boolean = false
@@ -197,7 +212,7 @@ function StateMachine:setState(stateName: string, ...: any)
 	end
 	
 	if isValidState == false then
-		console.warn(`Request to update state dropped: "{stateName}" is not a valid state`)
+		console.deverr(`"{stateName}" is not a valid state`, `State machine: {self.name}`)
 		return
 	end
 	

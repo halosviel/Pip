@@ -73,7 +73,7 @@ end
 --# just appends "[DEVERR]" to the message
 local function devError(message: string, ...: any)
 	local scriptName: string, line: string  = getSource()
-	error(`[DEVERR] {scriptName} :: {message} - on line {line}`..formatTuple(...))
+	error(`[DEV ERR] {scriptName} :: {message} - on line {line}`..formatTuple(...))
 end
 
 return {
