@@ -7,7 +7,10 @@
 	Welds all BasePart descendants of instance to parent but not instance itself.
 ]=]
 
+-- [REQUIRES]
 local params = require("@game/ReplicatedFirst/pip/params")
+
+-->
 
 return function(instance: Instance, parent: BasePart)
 	params.expect("Instance", instance)
