@@ -10,7 +10,6 @@
 	applyKnockback(character, Vector3.new(0, 0, 1), 25, 5)
 	
 	[NOTES]
-	- Assumes all character checks have been done externally before calling the function, hence minimal character validation.
 	- Works even if humanoid is dead.
 ]=]
 
@@ -21,7 +20,7 @@ return function(targetCharacter: Model, lookVector: Vector3, force: number, lift
 	--# dont assert targetCharacter -> anything can happen at runtime!
 	local targetCharacterType = typeof(targetCharacter)
 	if targetCharacterType ~= "Instance" or targetCharacterType == "Instance" and targetCharacter.ClassName ~= "Model" then
-		console.warn("Request dropped: Invalid targetCharacter")
+		console.warn("Request to apply knockback dropped: Invalid target character")
 		return
 	end
 	
@@ -31,7 +30,7 @@ return function(targetCharacter: Model, lookVector: Vector3, force: number, lift
 	
 	local targetRootPart: Part? = targetCharacter:FindFirstChild("HumanoidRootPart")
 	if not targetRootPart then
-		console.warn("Request dropped: targetCharacter did not have a HumanoidRootPart")
+		console.warn("Request to apply knockback dropped: target character did not have a HumanoidRootPart")
 		return
 	end
 	

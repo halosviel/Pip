@@ -16,6 +16,7 @@
 	  emit a warn though.
 ]=]
 
+-- [TYPES]
 type Controls = { --# made by clanker
 	inputMoveVector: Vector3,
 	
@@ -39,6 +40,8 @@ type Controls = { --# made by clanker
 }
 --# screw typing
 --# allat to use 2 properties x_x
+
+-->
 
 local playerModule = require(game.Players.LocalPlayer.PlayerScripts:WaitForChild("PlayerModule"))
 local controls: Controls = playerModule:GetControls()

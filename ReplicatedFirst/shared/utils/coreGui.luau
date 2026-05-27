@@ -18,7 +18,6 @@
 	  properly manage all requests.
 ]=]
 
-local console = require("@game/ReplicatedFirst/pip/console")
 local params = require("@game/ReplicatedFirst/pip/params")
 
 type self = {
@@ -58,6 +57,5 @@ return {
 		self:setResetEnabled(enabled)
 		self:setLeaderboardEnabled(enabled)
 		self:setChatEnabled(enabled)
-		self:setResetEnabled(enabled)
 	end,
 } :: CoreGui
