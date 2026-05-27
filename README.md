@@ -71,4 +71,4 @@ return {
 #### Model
 https://create.roblox.com/store/asset/113097113661715
 
-<img width="250" height="350" alt="2026-05-24-184658_hyprshot" src="https://github.com/user-attachments/assets/5c199d4e-20ae-473d-8e44-a486c917b80b" />
+<img width="200" height="350" alt="Preview hierarchy of the Pip model" src="https://github.com/user-attachments/assets/878c36cb-4393-4d80-9997-a96b3477c2f5" />
