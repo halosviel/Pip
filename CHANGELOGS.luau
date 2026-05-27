@@ -5,6 +5,10 @@
 --# 2026
 >>
 
+MAY 27: Updated the inputChangeLogger daemon.
+MAY 27: Removed getPreferredInputStyled module.
+MAY 27: Updated most utils.
+
 MAY 26: Updated try to validate the error handler on the initial call.
 MAY 26: Removed redundant try statement checks in boot.
 
