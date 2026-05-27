@@ -18,8 +18,10 @@
 	  properly manage all requests.
 ]=]
 
+-- [REQUIRES]
 local params = require("@game/ReplicatedFirst/pip/params")
 
+-- [TYPES]
 type self = {
 	setResetEnabled: ( self: self, enabled: boolean ) -> nil,
 	setLeaderboardEnabled: ( self: self, enabled: boolean ) -> nil,
@@ -27,6 +29,8 @@ type self = {
 	setAllEnabled: ( self: self, enabled: boolean ) -> nil,
 }
 export type CoreGui = self
+
+-->
 
 return {
 	--# since this runs asynchronously, race conditions can happen if multiple calls happen simultaneously.

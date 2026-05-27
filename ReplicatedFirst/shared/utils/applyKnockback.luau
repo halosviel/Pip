@@ -13,8 +13,11 @@
 	- Works even if humanoid is dead.
 ]=]
 
+-- [REQUIRES]
 local console = require("@game/ReplicatedFirst/pip/console")
 local params = require("@game/ReplicatedFirst/pip/params")
+
+-->
 
 return function(targetCharacter: Model, lookVector: Vector3, force: number, lift: number)
 	--# dont assert targetCharacter -> anything can happen at runtime!

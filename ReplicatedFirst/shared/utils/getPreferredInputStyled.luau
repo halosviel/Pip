@@ -7,6 +7,8 @@
 	Reads the player's preffered input from the preferredInput param
 	or from UserInputService if there is none, and returns a stylised string.
 	
+	Used by kofetch
+	
 	[EXAMPLES]
 	(1) getPreferredInputStyled() --> "Keyboard/Mouse"
 	(2) getPreferredInputStyled(Enum.PreferredInput.Touch) --> "Touch"
@@ -19,6 +21,10 @@ local map = {
 }
 
 return function(preferredInput: Enum.PreferredInput?) : string
-	local input: Enum.PreferredInput = game.UserInputService.PreferredInput
+	if preferredInput then
+		
+	end
+	
+	local input: Enum.PreferredInput = preferredInput or game.UserInputService.PreferredInput
 	return map[input] or "Unknown"
 end
