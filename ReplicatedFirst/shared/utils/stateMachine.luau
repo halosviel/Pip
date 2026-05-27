@@ -7,14 +7,14 @@
 	Simple state machine implementation.
 	
 	Has:
-	- Sequential processing.
+	- Sequential processing (queued states).
 	- Set state from within a state.
 	- Optional exit handler.
 	
 	[EXAMPLE]
 	local stateMachine = require(script.Parent)
 	
-	local sm = stateMachine.new("idk", {
+	local sm = stateMachine.new("MY_STATE_MACHINE", {
 		intermission = {
 			enter = function()
 				
