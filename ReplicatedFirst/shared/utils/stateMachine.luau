@@ -200,7 +200,6 @@ function StateMachine.new(name: string, states: { name: string, [string]: State?
 end
 
 function StateMachine:setState(stateName: string, ...: any)
-	print(stateName, ...)
 	params.expect("string", stateName)
 	
 	local isValidState: boolean = false
