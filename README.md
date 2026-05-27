@@ -56,10 +56,7 @@ export type MyService = self
 
 return {
 	constructor = function(self: self)
-		-- CONFIG]
-        
-        -->
-        
+		
 	end,
 	
 	ready = function(self: self)
