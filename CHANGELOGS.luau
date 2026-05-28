@@ -5,6 +5,8 @@
 --# 2026
 >>
 
+MAY 28: Fixed an issue in StateMachine where it would display "err" instead of the actual error.
+
 MAY 27: Updated console deverr message.
 MAY 27: Updated StateMachine util.
 MAY 27: Updated the inputChangeLogger daemon.

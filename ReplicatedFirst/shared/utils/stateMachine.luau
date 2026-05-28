@@ -115,7 +115,7 @@ local function start()
 						currentState:exit()
 					end,
 					function(err: string)
-						console.warn(`"{currentStateName}" exit state failed`, `Err: err`, `State machine: {stateMachine.name}`)
+						console.warn(`"{currentStateName}" exit state failed`, `Err: {err}`, `State machine: {stateMachine.name}`)
 					end,
 				}
 			end
@@ -136,7 +136,7 @@ local function start()
 					nextState:enter(table.unpack(queuedState.args))
 				end,
 				function(err: string)
-					console.warn(`"{nextStateName}" enter state failed`, `Err: err`, `State machine: {stateMachine.name}`)
+					console.warn(`"{nextStateName}" enter state failed`, `Err: {err}`, `State machine: {stateMachine.name}`)
 				end,
 			}
 			
