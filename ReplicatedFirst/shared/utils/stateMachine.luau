@@ -238,6 +238,22 @@ function StateMachine:setState(stateName: string, ...: any)
 end
 
 function StateMachine:Destroy()
+	--# 2026 May 29 hotfix
+	if self.state then
+		local currentState = self.states[self.state]
+		if currentState and currentState.exit then
+			try {
+				function()
+					currentState:exit()
+				end,
+				function(err)
+					console.warn(`"{self.state}" exit failed during Destroy`, err)
+				end,
+			}
+		end
+	end
+	-->
+	
 	table.remove(stateMachines, table.find(stateMachines, self))
 	
 	if isRunning() and #stateMachines == 0 then
