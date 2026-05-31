@@ -40,7 +40,7 @@ return function(services: Folder)
 	--# process timer
 	local startTimestamp = os.clock()
 	local bootTimer: processTimer.ProcessTimer?
-	bootTimer = processTimer.new(`KERNEL_BOOT_{game.RunService:IsServer() and "SERVER" or "CLIENT"}`, function()
+	bootTimer = processTimer.new(`BOOT_PROCESS_{game.RunService:IsServer() and "SERVER" or "CLIENT"}`, function()
 		bootTimer = nil
 	end)
 	
