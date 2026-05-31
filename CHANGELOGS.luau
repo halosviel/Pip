@@ -5,6 +5,7 @@
 --# 2026
 >>
 
+MAY 31: Added the assets folder to ReplicatedFirst.
 MAY 31: Fixed SoundUtils yielding on the server.
 MAY 31: Updated message in boot.
 MAY 31: Updated message in processTimer.
