@@ -22,7 +22,7 @@
 ]=]
 
 -- [CONFIG]
-local MESSAGE = "PROCESS :: Process \"%s\" is taking longer than expected (%is)"
+local MESSAGE = "Process \"%s\" is taking longer than expected (%is)"
 local MILESTONES = { 10, 30, 60, 120, 300, 600, 1000 }
 
 -- [REQUIRES]
