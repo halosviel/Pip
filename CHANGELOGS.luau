@@ -5,6 +5,8 @@
 --# 2026
 >>
 
+JUNE 02: Added game service preloading to boot.
+
 MAY 31: Added the assets folder to ReplicatedFirst.
 MAY 31: Fixed SoundUtils yielding on the server.
 MAY 31: Updated message in boot.
