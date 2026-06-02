@@ -5,6 +5,7 @@
 --# 2026
 >>
 
+JUNE 02: REmoved service preloading from boot. Instead, maintain standard: "If service is not in explorer, use GetService()".
 JUNE 02: Updated applyKnockback to take BaseParts instead of characters.
 JUNE 02: Added game service preloading to boot.
 
