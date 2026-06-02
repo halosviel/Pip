@@ -4,13 +4,13 @@
 	created: 2026 March 7
 	
 	[DESCRIPTION]
-	Applies knockback to the target's HumanoidRootPart in the direction of lookVector.
+	Applies knockback and lift to the part in the direction of lookVector.
 	
 	[EXAMPLES]
-	applyKnockback(character, Vector3.new(0, 0, 1), 25, 5)
+	applyKnockback(part, Vector3.new(0, 0, 1), 25, 5)
 	
-	[NOTES]
-	- Works even if humanoid is dead.
+	[UPDATES]
+	2026 June 02: Made the module compatible with parts, not just players specifically.
 ]=]
 
 -- [REQUIRES]
@@ -19,11 +19,10 @@ local params = require("@game/ReplicatedFirst/pip/params")
 
 -->
 
-return function(targetCharacter: Model, lookVector: Vector3, force: number, lift: number)
+return function(part: Part, lookVector: Vector3, force: number, lift: number)
 	--# dont assert targetCharacter -> anything can happen at runtime!
-	local targetCharacterType = typeof(targetCharacter)
-	if targetCharacterType ~= "Instance" or targetCharacterType == "Instance" and targetCharacter.ClassName ~= "Model" then
-		console.warn("Request to apply knockback dropped: Invalid target character")
+	if typeof(part) ~= "Instance" or typeof(part) == "Instance" and not part:IsA("BasePart") then
+		console.warn("Request to apply knockback dropped: Invalid BasePart given")
 		return
 	end
 	
@@ -31,17 +30,11 @@ return function(targetCharacter: Model, lookVector: Vector3, force: number, lift
 	params.expect("number", force)
 	params.expect("number", lift)
 	
-	local targetRootPart: Part? = targetCharacter:FindFirstChild("HumanoidRootPart")
-	if not targetRootPart then
-		console.warn("Request to apply knockback dropped: target character did not have a HumanoidRootPart")
-		return
-	end
-	
 	local velocity: Vector3 = (lookVector * force) + Vector3.new(0, lift, 0)
 	
 	local attachment = Instance.new("Attachment")
 	attachment.Name = "KnockbackAttachment"
-	attachment.Parent = targetRootPart
+	attachment.Parent = part
 	
 	local linearVelocity = Instance.new("LinearVelocity")
 	linearVelocity.Attachment0 = attachment
@@ -49,10 +42,10 @@ return function(targetCharacter: Model, lookVector: Vector3, force: number, lift
 	linearVelocity.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
 	linearVelocity.VectorVelocity = velocity
 	linearVelocity.MaxForce = math.huge
-	linearVelocity.Parent = targetRootPart
+	linearVelocity.Parent = part
 	
 	game.Debris:AddItem(attachment, 0.15)
 	game.Debris:AddItem(linearVelocity, 0.15)
 	
-	--console.log(`Knockback with {force} force applied to player {tostring(targetCharacter) or "Unknown"}`)
+	--console.log(`Knockback with {force} force applied to part "{tostring(part) or "Unknown"}"`)
 end
