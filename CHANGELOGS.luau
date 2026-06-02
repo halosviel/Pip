@@ -5,6 +5,7 @@
 --# 2026
 >>
 
+JUNE 02: Updated applyKnockback to take BaseParts instead of characters.
 JUNE 02: Added game service preloading to boot.
 
 MAY 31: Added the assets folder to ReplicatedFirst.
