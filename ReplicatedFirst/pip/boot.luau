@@ -4,7 +4,7 @@
 	created: 2026 May 12
 	
 	[DESCRIPTION]
-	Module loader for the framework.
+	Service preloader & Module loader for the framework.
 	
 	A separate timer will run in the background and emit warns if the
 	boot process takes too long.
@@ -12,6 +12,7 @@
 	[NOTES]
 	- There is no guard for same-name modules - will warn instead.
 	- Shallow search is used for the services folder.
+	- Should only be called once per boundary!!
 ]=]
 
 -- [REQUIRES]
@@ -30,6 +31,17 @@ type Module = {
 
 return function(services: Folder)
 	params.expect("Folder", services)
+	
+	--# preload game services
+	local gameServices = {
+		"Players", "RunService", "ReplicatedStorage", "Workspace", "TweenService", "UserInputService", "CollectionService", "ServerStorage",
+		"ServerScriptService", "PathfindingService", "DataStoreService", "MarketplaceService", "HttpService", "TeleportService", "SoundService",
+		"ContextActionService", "Lighting", "StarterGui", "StarterPlayer", "StarterGear", "GuiService", "PhysicsService",
+		"ProximityPromptService", "ContentProvider", "TextChatService", "MessagingService"
+	}
+	for _, service: string in gameServices do
+		game:GetService(service)
+	end
 	
 	local moduleScripts: { ModuleScript } = services:GetChildren()
 	if #moduleScripts == 0 then
