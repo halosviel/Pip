@@ -59,7 +59,7 @@ return function(services: Folder)
 				module = require(moduleScript)
 			end,
 			function(err: string)
-				console.warn(`Failed to require {moduleName}`, err, "Skipping...")
+				console.warn(`Failed to require {moduleName}`, `Err: {err}`, "Skipping...")
 			end,
 		}
 		if not moduleRequired then
@@ -83,7 +83,7 @@ return function(services: Folder)
 				module:constructor()
 			end,
 			function(err: string)
-				console.warn(`{moduleName} constructor callback failure`, err, "Skipping...")
+				console.warn(`{moduleName} constructor callback failure`, `Err: {err}`, "Skipping...")
 			end,
 		}
 	end
@@ -95,7 +95,7 @@ return function(services: Folder)
 				module:ready()
 			end,
 			function(err: string)
-				console.warn(`{moduleName} ready callback failed`, err, "Skipping...")
+				console.warn(`{moduleName} ready callback failed`, `Err: {err}`, "Skipping...")
 			end,
 		}
 	end
