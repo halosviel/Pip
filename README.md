@@ -8,18 +8,21 @@ It is built for personal use, but open to anyone who finds it :)
     <small>A project using Pip</small>
 </p>
 
+## Features
+- Arch-linux style output
+- JavaScript-like writing style
+- Microsoft INI-inspired commenting syntax
+
 ## About
-Pip features an Arch-style output, a JS-like writing style, and a singleton module architecture.
+Pip aims to be small yet highly customisable. It does not provide entire re-usable systems.
+Instead, it comes with a predefined folder structure and utility modules.
 
-The framework aims to be small yet highly customisable. It does not provide entire re-usable systems.
-Instead, it comes with a predefined folder structure paired with in-house util modules that standardise workflow.
+Pip is ran on what I call a service/daemon architecture.
+- **Services** are systems (modules) that have multiple callers and purposes.
+- **Daemons** are Scripts/LocalScripts that run background processes and small, dedicated tasks. Examples: Camera bobbing, day cycles.
+A template for services is provided in the server modules folder.
 
-A typical project will consist of services and daemons. A template for services is provided in the server modules.
-Daemons are Scripts/LocalScripts that run small, dedicated tasks akin to embedded devices. Examples include camera
-bobbing and day cycles. 
-
-Pip is meant to be build on top of - Each game the framework is used on is meant to be different in its own way,
-but still retain the core structure and principles of the framework.
+Pip is meant to be build on top of - Each game the framework is used on is meant to be different in its own way, while still retaining the core structure and principles of the framework.
 
 ## Service Template
 Also located in `server/services`.
