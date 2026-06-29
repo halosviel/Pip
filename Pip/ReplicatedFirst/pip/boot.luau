@@ -57,12 +57,16 @@ return {
 			if not moduleScript:IsA("ModuleScript") then
 				continue
 			end
+			if moduleScript.Name == "_types" then
+				continue
+			end
+			
 			local moduleName = moduleScript.Name
 			
 			local module: Module
 			local moduleRequired: boolean = try {
 				function()
-					module = require(moduleScript)
+					module = require(moduleScript) --# stupid type; ignore ts
 				end,
 				function(err: string)
 					console.warn(`Failed to require {moduleName}`, `Err: {err}`, "Skipping...")
