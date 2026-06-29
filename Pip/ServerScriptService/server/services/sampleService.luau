@@ -10,20 +10,10 @@
 ]=]
 
 -- [REQUIRES]
+local types = require("./_types")
 
 -- [TYPES]
-type self = {
-	-- [CONFIG]
-	
-	-- [IMPORTS]
-	
-	-- [ENTRIES]
-	
-	-- [FUNCTIONS]
-	constructor: ( self: self ) -> nil,
-	ready: ( self: self ) -> nil
-}
-export type Service = self
+type self = types.SampleService
 
 -->
 

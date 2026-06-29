@@ -3,21 +3,10 @@
 ]=]
 
 -- [REQUIRES]
-local console = require("@game/ReplicatedFirst/pip/console")
+local types = require("./_types")
 
 -- [TYPES]
-type self = {
-	-- [CONFIG]
-	
-	-- [IMPORTS]
-
-	-- [ENTRIES]
-
-	-- [FUNCTIONS]
-	constructor: ( self: self ) -> nil,
-	ready: ( self: self ) -> nil
-}
-export type InterfaceService = self
+type self = types.InterfaceService
 
 -->
 
@@ -30,8 +19,7 @@ return {
 		local startTimestamp = os.clock()
 		
 		local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-		--local main: typeof(game.StarterGui.main) = playerGui:WaitForChild("main")
+		local main: typeof(game.StarterGui.main) = playerGui:WaitForChild("main")
 		
-		--# cont...
 	end,
 } :: self
