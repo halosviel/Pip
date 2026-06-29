@@ -9,4 +9,4 @@ local kofetch = require("@game/ReplicatedFirst/pip/kofetch")
 -->
 
 kofetch()
-boot(script.Parent.services)
+boot:start(script.Parent.services)

@@ -10,7 +10,7 @@ local formatTime = require("@game/ReplicatedFirst/shared/utils/formatTime")
 -->
 
 local startTimestamp = os.clock()
-boot(script.Parent.services)
+boot:start(script.Parent.services)
 
 --# session wrapper
 game:BindToClose(function()

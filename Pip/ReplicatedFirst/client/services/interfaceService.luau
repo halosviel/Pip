@@ -28,7 +28,7 @@ return {
 		local startTimestamp = os.clock()
 		
 		local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-		local main: typeof(game.StarterGui.main) = playerGui:WaitForChild("main")
+		--local main: typeof(game.StarterGui.main) = playerGui:WaitForChild("main")
 		
 		--# cont...
 	end,
