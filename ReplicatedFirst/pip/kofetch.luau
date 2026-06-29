@@ -36,9 +36,9 @@ local gameVersion = require("@game/ReplicatedFirst/shared/version")
 local function getNetworkStatus() : string
 	local ping = math.floor(game.Players.LocalPlayer:GetNetworkPing() or 9 * 1000)
 	local map = {
-		{10, "Exceptional"},
-		{50, "Good"},
-		{100, "Alright"}
+		{ 10, "Exceptional" },
+		{ 50, "Good" },
+		{ 100, "Alright" }
 	}
 	
 	for i = 1, #map do
@@ -66,7 +66,6 @@ local function getLocale() : string
 end
 
 return function()
-	local Stats = game:GetService("Stats")
 	print(
 		message:format(
 			game.Players.LocalPlayer.DisplayName, game.Players.LocalPlayer.Name,

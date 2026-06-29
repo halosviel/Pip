@@ -3,7 +3,13 @@
 [CHANGELOGS]
 
 --# 2026
->>
+JUNE 29: Updated main gui.
+JUNE 29: Updated dataTemplate.
+JUNE 29: Commented out boot time log.
+JUNE 29: Updated the version module.
+JUNE 29: Cleaned up kofetch.
+
+JUNE 28: Updated server & client session scripts + renamed to "index".
 
 JUNE 04: Updated boot error message formatting.
 

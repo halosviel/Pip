@@ -8,9 +8,9 @@
 ]=]
 
 export type Data = {
-	coins: number
+	
 }
 
 return {
-	coins = 0
+	
 } :: Data

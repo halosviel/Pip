@@ -104,5 +104,5 @@ return function(services: Folder)
 		bootTimer:exit()
 	end
 	
-	console.log(`{game.RunService:IsServer() and "Server" or "Client"} booted in {os.clock() - startTimestamp}s`)
+	--console.log(`{game.RunService:IsServer() and "Server" or "Client"} booted in {os.clock() - startTimestamp}s`)
 end
