@@ -3,7 +3,9 @@
 [CHANGELOGS]
 
 --# 2026
-JUNE 30: Added server assets folder.
+JUNE 29: Updated console to hardcode params source.
+JUNE 29: Added alias `devErr` to console.
+JUNE 29: Added server assets folder.
 JUNE 29: Updated main gui.
 JUNE 29: Updated dataTemplate.
 JUNE 29: Commented out boot time log.

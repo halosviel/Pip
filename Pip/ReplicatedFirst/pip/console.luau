@@ -25,13 +25,24 @@ local NIL_STR = "??"
 --# utils
 
 local function getSource(message: string) : ( string, string )
-	local path: string = debug.info(INFO_LEVEL, "s")
+	local infoLevel = INFO_LEVEL
 	
+	local path: string = debug.info(infoLevel, "s")
 	local scriptName: string = path and path:match("[^%.]+$") or "Unknown"
+	
+	--# june 29 update: hardcoded case - if it comes from params module, add 1 to the level
+	--# fixes ambiguous message since params becomes the source
+	if scriptName == "params" then
+		infoLevel += 1
+		--# just recalc
+		path = debug.info(infoLevel, "s")
+		scriptName = path and path:match("[^%.]+$") or "Unknown"
+	end
+	
 	local result = scriptName:gsub("(%u)", " %1")
 	scriptName = string.upper(result:gsub("^%s", ""))
 	
-	local line: number = debug.info(INFO_LEVEL, "l") or "0"
+	local line: number = debug.info(infoLevel, "l") or "0"
 	return scriptName, line
 end
 
@@ -85,5 +96,6 @@ return {
 	--# aliases
 	log = _print,
 	except = _error,
-	deverr = devError
+	deverr = devError,
+	devErr = devError
 }
