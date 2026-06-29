@@ -8,6 +8,8 @@ local console = require("@game/ReplicatedFirst/pip/console")
 -- [TYPES]
 type self = {
 	-- [CONFIG]
+	
+	-- [IMPORTS]
 
 	-- [ENTRIES]
 

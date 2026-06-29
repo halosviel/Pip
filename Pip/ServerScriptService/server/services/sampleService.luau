@@ -14,6 +14,8 @@
 -- [TYPES]
 type self = {
 	-- [CONFIG]
+	
+	-- [IMPORTS]
 
 	-- [ENTRIES]
 

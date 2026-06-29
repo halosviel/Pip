@@ -3,6 +3,7 @@
 [CHANGELOGS]
 
 --# 2026
+JUNE 29: Added imports section to services.
 JUNE 29: Updated boot logic -> now an actual boot loader; added import module.
 JUNE 29: Updated console to hardcode params source.
 JUNE 29: Added alias `devErr` to console.
