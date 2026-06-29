@@ -16,9 +16,9 @@ type self = {
 	-- [CONFIG]
 	
 	-- [IMPORTS]
-
+	
 	-- [ENTRIES]
-
+	
 	-- [FUNCTIONS]
 	constructor: ( self: self ) -> nil,
 	ready: ( self: self ) -> nil
