@@ -11,6 +11,7 @@ local stateMachine = require("@game/ReplicatedFirst/shared/utils/stateMachine")
 
 export type InterfaceService = {
 	clientService: ClientService,
+	main: typeof(game.StarterGui.main),
 	constructor: ( self: InterfaceService ) -> nil,
 	enterMenu: ( self: InterfaceService ) -> nil,
 	exitMenu: ( self: InterfaceService ) -> nil,

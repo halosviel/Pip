@@ -12,14 +12,13 @@ type self = types.InterfaceService
 
 return {
 	constructor = function(self: self)
-		
+		-- [ENTRIES]
+		self.main = nil
 	end,
 	
 	ready = function(self: self)
-		local startTimestamp = os.clock()
-		
 		local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-		local main: typeof(game.StarterGui.main) = playerGui:WaitForChild("main")
+		self.main = playerGui:WaitForChild("main")
 		
 	end,
 } :: self

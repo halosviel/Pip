@@ -3,6 +3,10 @@
 [CHANGELOGS]
 
 --# 2026
+
+JUNE 30: Re-added category comments -> inside constructor.
+JUNE 30: Updated InterfaceService.
+
 JUNE 29: Added imports section to services.
 JUNE 29: Updated boot logic -> now an actual boot loader; added import module.
 JUNE 29: Updated console to hardcode params source.
