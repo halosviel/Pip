@@ -4,6 +4,7 @@
 
 --# 2026
 
+JUNE 30: Cleaned up client types module.
 JUNE 30: Re-added category comments -> inside constructor.
 JUNE 30: Updated InterfaceService.
 
